@@ -7,8 +7,9 @@
   },
   "dependencies": {
     "@grpc/grpc-js": "^1.13.1",
-    "@hyperledger/caliper-cli": "^0.7.1",
-    "@hyperledger/caliper-fabric": "^0.7.1",
-    "@hyperledger/fabric-gateway": "^1.7.1"
+    "@hyperledger/caliper-cli": "^0.3.2",
+    "@hyperledger/caliper-fabric": "^0.3.2",
+    "@hyperledger/fabric-gateway": "^1.7.1",
+    "hardhat": "^3.3.0"
   }
 }
