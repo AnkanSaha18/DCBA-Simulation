@@ -10,14 +10,14 @@ const EXPERIMENT = {
   // runs কম → deploy gas বেশি, কিন্তু runtime gas কম
   // runs বেশি → deploy gas কম, runtime gas ও কম
   // default ছিল 200. নিচের values try করো: 1, 200, 1000, 10000
-  OPTIMIZER_RUNS: 200,
+  OPTIMIZER_RUNS: parseInt(process.env.OPTIMIZER_RUNS) || 200,
 
   // ── Experiment 2: Block Gas Limit ─────────────────────────────────
   // Ethereum mainnet: ~30,000,000
   // DCBA default: 60,000,000 (conservative)
   // কম করলে: SC5.submitOrder() (369,599 gas) কখন fail করে দেখা যায়
   // values to try: 500000, 1000000, 8000000, 30000000, 60000000
-  BLOCK_GAS_LIMIT: 30000000,
+  BLOCK_GAS_LIMIT: 60000000, // lowest: 2400000
 
   // ── Experiment 3: Mining Mode ──────────────────────────────────────
   // "auto"     → প্রতিটা transaction-এর পর নতুন block mine করে
@@ -43,8 +43,8 @@ const EXPERIMENT = {
   EVM_VERSION: "paris",
 
   // ── Experiment 7: Account Setup ───────────────────────────────────
-  COUNT: 20,          // কতটা test account
-  BALANCE_ETH: 10000, // প্রতিটায় কত ETH
+  COUNT: 20,          // কতটা test account (Default: 20)
+  BALANCE_ETH: 10000, // প্রতিটায় কত ETH (Default : 10000)
 };
 
 // ─────────────────────────────────────────────────────────────────────
@@ -98,7 +98,7 @@ export default {
   // ── Gas Reporter ──────────────────────────────────────────────────
   // npx hardhat test --gas এ বিস্তারিত gas breakdown দেখায়
   gasReporter: {
-    enabled: process.env.REPORT_GAS !== undefined,
+    enabled: true,
     outputFile: "gas-report.txt",
     noColors: true,
     currency: "USD",
