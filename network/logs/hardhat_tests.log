@@ -1,4 +1,5 @@
 
+
   Gas Cost Benchmark
     SC1.register()         : 118652 gas
     ✔ GAS-01: SC1.register()
@@ -142,5 +143,5 @@
     ✔ TC-SEC-10: Attacker warehouse cannot confirm another order's stock
 
 
-  112 passing (8s)
+  112 passing (5s)
 

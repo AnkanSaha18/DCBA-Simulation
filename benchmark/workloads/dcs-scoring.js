@@ -1,6 +1,4 @@
-'use strict';
-
-const { WorkloadModuleBase } = require('@hyperledger/caliper-core');
+import { WorkloadModuleBase } from '@hyperledger/caliper-core';
 
 class DcsScoringWorkload extends WorkloadModuleBase {
     constructor() {
@@ -63,4 +61,4 @@ function createWorkloadModule() {
     return new DcsScoringWorkload();
 }
 
-module.exports.createWorkloadModule = createWorkloadModule;
+export { createWorkloadModule };

@@ -21,7 +21,7 @@ if [ ! -d "$FABRIC_TEST_NETWORK" ]; then
 fi
 
 # Chaincode source lives inside the DCBA project
-CHAINCODE_PATH="${DCBA_ROOT}/Blockchain/chaincode/dcba-uoc"
+CHAINCODE_PATH="${DCBA_ROOT}/chaincode/dcba-uoc"
 
 # ── Unique IDs per run to avoid "already exists" collisions ──────────────────
 TS=$(date +%s)

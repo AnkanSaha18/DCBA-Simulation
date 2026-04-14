@@ -1,7 +1,8 @@
-require("@nomicfoundation/hardhat-toolbox");
+import "@nomicfoundation/hardhat-toolbox";
+import "hardhat-gas-reporter";
 
 // ── টুনেবল প্যারামিটার ────────────────────────────────────────────────
-// Try differnt experiment by changing values in this section 
+// Try differnt experiment by changing values in this section
 
 const EXPERIMENT = {
 
@@ -16,7 +17,7 @@ const EXPERIMENT = {
   // DCBA default: 60,000,000 (conservative)
   // কম করলে: SC5.submitOrder() (369,599 gas) কখন fail করে দেখা যায়
   // values to try: 500000, 1000000, 8000000, 30000000, 60000000
-  BLOCK_GAS_LIMIT: 60_000_000,
+  BLOCK_GAS_LIMIT: 30000000,
 
   // ── Experiment 3: Mining Mode ──────────────────────────────────────
   // "auto"     → প্রতিটা transaction-এর পর নতুন block mine করে
@@ -48,7 +49,7 @@ const EXPERIMENT = {
 
 // ─────────────────────────────────────────────────────────────────────
 
-const config = {
+export default {
   solidity: {
     version: "0.8.20",
     settings: {
@@ -71,7 +72,7 @@ const config = {
       initialBaseFeePerGas: EXPERIMENT.BASE_FEE_PER_GAS,
       accounts: {
         count: EXPERIMENT.COUNT,
-        accountsBalance: String(EXPERIMENT.BALANCE_ETH * 1e18),
+        accountsBalance: (BigInt(EXPERIMENT.BALANCE_ETH) * BigInt("1000000000000000000")).toString(),
       },
       mining: EXPERIMENT.MINING_MODE === "interval"
         ? {
@@ -104,5 +105,3 @@ const config = {
     coinmarketcap: process.env.COINMARKETCAP_API_KEY,
   },
 };
-
-module.exports = config;

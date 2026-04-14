@@ -1,6 +1,0 @@
-node_modules/
-chaincode/dcba-uoc/vendor/
-*.env
-.env
-dist/
-build/

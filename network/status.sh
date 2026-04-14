@@ -14,7 +14,7 @@ warn() { echo -e "  ${YELLOW}[WARN] $1${NC}"; }
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 DCBA_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-BLOCKCHAIN_DIR="$DCBA_ROOT/Blockchain"
+BLOCKCHAIN_DIR="$DCBA_ROOT"
 FABRIC_NETWORK="$HOME/fabric/fabric-samples/test-network"
 
 echo -e "\n${BOLD}${CYAN}  DCBA Project Status — $(date '+%Y-%m-%d %H:%M:%S')${NC}\n"

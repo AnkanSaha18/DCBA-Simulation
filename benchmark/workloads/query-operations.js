@@ -1,6 +1,4 @@
-'use strict';
-
-const { WorkloadModuleBase } = require('@hyperledger/caliper-core');
+import { WorkloadModuleBase } from '@hyperledger/caliper-core';
 
 class QueryWorkload extends WorkloadModuleBase {
     constructor() {
@@ -54,4 +52,4 @@ function createWorkloadModule() {
     return new QueryWorkload();
 }
 
-module.exports.createWorkloadModule = createWorkloadModule;
+export { createWorkloadModule };

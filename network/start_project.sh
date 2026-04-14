@@ -55,8 +55,8 @@ done
 # ── Paths ────────────────────────────────────────────────────
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 DCBA_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-BLOCKCHAIN_DIR="$DCBA_ROOT/Blockchain"
-CHAINCODE_DIR="$BLOCKCHAIN_DIR/chaincode/dcba-uoc"
+BLOCKCHAIN_DIR="$DCBA_ROOT"
+CHAINCODE_DIR="$DCBA_ROOT/chaincode/dcba-uoc"
 FABRIC_NETWORK="$HOME/fabric/fabric-samples/test-network"
 CHANNEL="dcbachannel"
 CHAINCODE_NAME="dcba-uoc"
@@ -104,7 +104,6 @@ ok "Python3  : $(python3 --version)"
 ok "Peer     : $(peer version 2>&1 | grep 'Version:' | awk '{print $2}')"
 
 [ -d "$FABRIC_NETWORK" ]  || fail "Fabric test-network not found at $FABRIC_NETWORK"
-[ -d "$BLOCKCHAIN_DIR" ]  || fail "Blockchain project not found at $BLOCKCHAIN_DIR"
 [ -d "$CHAINCODE_DIR" ]   || fail "Go chaincode not found at $CHAINCODE_DIR"
 
 ok "All tools present ✓"

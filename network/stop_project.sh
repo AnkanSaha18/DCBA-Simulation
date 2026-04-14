@@ -24,7 +24,7 @@ done
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 DCBA_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-BLOCKCHAIN_DIR="$DCBA_ROOT/Blockchain"
+BLOCKCHAIN_DIR="$DCBA_ROOT"
 FABRIC_NETWORK="$HOME/fabric/fabric-samples/test-network"
 PID_FILE="$SCRIPT_DIR/.dcba_pids"
 

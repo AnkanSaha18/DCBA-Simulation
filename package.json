@@ -1,15 +1,20 @@
 {
-  "name": "dcba-benchmark",
+  "name": "dcba-simulation",
   "version": "1.0.0",
-  "description": "Hyperledger Caliper benchmark for DCBA UOC chaincode",
+  "description": "DCBA Dual-Chain Blockchain Architecture — Hardhat + Caliper Simulation",
+  "type": "module",
   "engines": {
     "node": ">=18.0.0"
   },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.28.6",
+    "hardhat-gas-reporter": "^1.0.10"
+  },
   "dependencies": {
     "@grpc/grpc-js": "^1.13.1",
-    "@hyperledger/caliper-cli": "^0.3.2",
-    "@hyperledger/caliper-fabric": "^0.3.2",
-    "@hyperledger/fabric-gateway": "^1.7.1",
-    "hardhat": "^3.3.0"
+    "@hyperledger/caliper-cli": "^0.7.1",
+    "@hyperledger/caliper-fabric": "^0.7.1",
+    "@hyperledger/fabric-gateway": "^1.7.1"
   }
 }
